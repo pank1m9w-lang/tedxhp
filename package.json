@@ -1,0 +1,31 @@
+{
+  "name": "tedxyouth-okayama-2025",
+  "version": "1.0.0",
+  "description": "Official website for TEDxYouth@Okayama 2025 - Roots for Well-being, Innovation",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build step required'",
+    "start": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "TEDx",
+    "TEDxYouth",
+    "Okayama",
+    "2025",
+    "event",
+    "innovation",
+    "well-being"
+  ],
+  "author": "TEDxYouth@Okayama Organizing Committee",
+  "license": "MIT",
+  "homepage": "https://tedxyouth-okayama.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pank1m9w-lang/tedxhp.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
