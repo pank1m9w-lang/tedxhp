@@ -81,6 +81,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 70px;
 }
 
+.nav__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tedx-black);
+}
+
 .nav__logo-img {
     height: 40px;
 }
@@ -156,10 +162,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__tree-logo {
-    width: 150px;
-    height: 150px;
+    font-size: 150px;
     margin-bottom: 2rem;
     animation: float 3s ease-in-out infinite;
+    display: inline-block;
 }
 
 @keyframes float {
@@ -369,6 +375,14 @@ section {
     overflow: hidden;
     margin: 0 auto 1rem;
     background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speaker__placeholder {
+    font-size: 60px;
+    color: #999;
 }
 
 .speaker__image img {
@@ -543,6 +557,11 @@ section {
     gap: 1rem;
 }
 
+.footer__logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 .footer__logo img {
     height: 30px;
 }
@@ -625,8 +644,7 @@ section {
     }
 
     .hero__tree-logo {
-        width: 100px;
-        height: 100px;
+        font-size: 100px;
     }
 
     .event__info,
