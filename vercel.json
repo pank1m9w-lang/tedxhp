@@ -1,3 +1,7 @@
 {
-  "version": 2
+  "buildCommand": "echo 'No build needed for static site'",
+  "outputDirectory": ".",
+  "installCommand": "echo 'No install needed'",
+  "framework": null,
+  "devCommand": "python3 -m http.server 3000"
 }
