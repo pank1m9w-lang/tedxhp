@@ -161,6 +161,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+.hero__tree-video {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--tedx-red);
+}
+
 .hero__tree-logo {
     font-size: 150px;
     margin-bottom: 2rem;
@@ -641,6 +652,11 @@ section {
 
     .hero__title {
         font-size: 2rem;
+    }
+
+    .hero__tree-video {
+        width: 150px;
+        height: 150px;
     }
 
     .hero__tree-logo {

@@ -1,0 +1,32 @@
+ホーム
+目的：イベントの概要と世界観を直感的に伝える
+
+要素
+
+メインビジュアル：ツリーロゴを中心に
+
+イベントタイトル：TEDxYouth@Okayama 2025
+
+テーマコピー：Roots for Well-being, Innovation
+
+開催概要（日時・場所）
+
+動画「呼応する木」を利用
+
+キャッチコピー：
+
+What is Protopia?
+
+Protopia : Roots for Innovation, Well-being.
+2025/12/20 sat. @Okayama Univ.
+
+
+ギミック
+
+クリックで光の波紋が広がる
+
+スクロールで丸い花びらが積もる
+
+背景が白 → 赤に変化
+
+赤背景時に JOINボタン を表示（JOINページへ遷移）
