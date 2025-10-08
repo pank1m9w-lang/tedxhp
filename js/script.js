@@ -1,5 +1,88 @@
+// Interactive Hero Section Features
+let clickCount = 0;
+let particleCount = 0;
+const maxParticles = 50;
+
+function createRipple(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = x - 50 + 'px';
+    ripple.style.top = y - 50 + 'px';
+    ripple.style.width = '100px';
+    ripple.style.height = '100px';
+
+    document.querySelector('.hero').appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+function createParticle() {
+    if (particleCount >= maxParticles) return;
+
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 3 + 's';
+    particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+
+    document.getElementById('heroParticles').appendChild(particle);
+    particleCount++;
+
+    setTimeout(() => {
+        particle.remove();
+        particleCount--;
+    }, 5000);
+}
+
+function toggleBackgroundColor() {
+    const hero = document.querySelector('.hero');
+    const joinButton = document.getElementById('heroJoinButton');
+
+    hero.classList.add('red-background');
+    joinButton.style.display = 'block';
+    setTimeout(() => {
+        joinButton.classList.add('show');
+    }, 100);
+}
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Hero click interaction
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('click', function(e) {
+            // Create ripple effect at click position
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            createRipple(x, y);
+
+            clickCount++;
+
+            // After 3 clicks, change background to red and show JOIN button
+            if (clickCount >= 3) {
+                toggleBackgroundColor();
+            }
+        });
+    }
+
+    // Scroll interaction - create falling particles
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Only create particles when scrolling down in hero section
+        if (scrollTop > lastScrollTop && scrollTop < window.innerHeight) {
+            if (Math.random() < 0.3) { // 30% chance per scroll
+                createParticle();
+            }
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
     const navToggle = document.querySelector('.nav__toggle');
     const navMenu = document.querySelector('.nav__menu');
 
