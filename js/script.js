@@ -22,10 +22,20 @@ function createParticle() {
     if (particleCount >= maxParticles) return;
 
     const particle = document.createElement('div');
-    particle.className = 'particle';
+
+    // ランダムに花びらの形を選択
+    const petalTypes = ['particle', 'particle petal-1', 'particle petal-2', 'particle petal-3'];
+    const randomType = petalTypes[Math.floor(Math.random() * petalTypes.length)];
+
+    particle.className = randomType;
     particle.style.left = Math.random() * 100 + '%';
     particle.style.animationDelay = Math.random() * 3 + 's';
-    particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+    particle.style.animationDuration = (3 + Math.random() * 3) + 's';
+
+    // ランダムにサイズを少し変更
+    const size = 8 + Math.random() * 8; // 8px - 16px
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
 
     document.getElementById('heroParticles').appendChild(particle);
     particleCount++;
@@ -33,7 +43,7 @@ function createParticle() {
     setTimeout(() => {
         particle.remove();
         particleCount--;
-    }, 5000);
+    }, 6000);
 }
 
 function toggleBackgroundColor() {
@@ -75,8 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Only create particles when scrolling down in hero section
         if (scrollTop > lastScrollTop && scrollTop < window.innerHeight) {
-            if (Math.random() < 0.3) { // 30% chance per scroll
+            // 50% chance per scroll event, creates more petals
+            if (Math.random() < 0.5) {
                 createParticle();
+            }
+            // Sometimes create multiple petals at once
+            if (Math.random() < 0.2) {
+                createParticle();
+                setTimeout(() => createParticle(), 100);
             }
         }
 

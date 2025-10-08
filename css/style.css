@@ -279,11 +279,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .particle {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+    background: rgba(230, 43, 30, 0.8);
+    border-radius: 50% 0 50% 0;
+    animation: fall 4s linear infinite;
+    transform-origin: center;
+}
+
+.particle::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 182, 193, 0.6);
+    border-radius: 50% 0 50% 0;
+    top: 2px;
+    left: 2px;
+}
+
+.particle.petal-1 {
+    background: rgba(255, 182, 193, 0.8);
+    border-radius: 50% 20% 50% 20%;
+}
+
+.particle.petal-2 {
     background: rgba(230, 43, 30, 0.7);
-    border-radius: 50%;
-    animation: fall 3s linear infinite;
+    border-radius: 20% 50% 20% 50%;
+}
+
+.particle.petal-3 {
+    background: rgba(255, 105, 180, 0.8);
+    border-radius: 60% 10% 60% 10%;
 }
 
 @keyframes fall {
@@ -369,6 +396,83 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--tedx-white);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Page Hero for separate pages */
+.page-hero {
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--tedx-white) 100%);
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: var(--tedx-black);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Active navigation link */
+.nav__link--active {
+    color: var(--tedx-red) !important;
+    font-weight: 600;
+}
+
+.nav__link--active::after {
+    width: 100%;
+}
+
+/* Content sections for separate pages */
+.content-grid {
+    display: grid;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.content-section {
+    background: var(--tedx-white);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.content-section h2 {
+    color: var(--tedx-red);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.content-text h3 {
+    color: var(--tedx-black);
+    margin: 2rem 0 1rem 0;
+    font-size: 1.3rem;
+}
+
+.content-text p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.theme-highlight {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--tedx-red);
+}
+
+.theme-definition {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--tedx-red);
+    font-style: italic;
 }
 
 /* Sections */
