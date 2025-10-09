@@ -37,28 +37,56 @@
     <main>
         <section class="hero">
             <div class="hero__container">
-                <div class="hero__content">
-                    <div class="hero__logo">
-                        <video class="hero__tree-video" autoplay muted loop playsinline>
-                            <source src="images/imagetree.mp4" type="video/mp4">
-                            <div class="hero__tree-logo">🌳</div>
-                        </video>
+                <div class="hero__split-layout">
+                    <!-- Left side: Large video -->
+                    <div class="hero__left">
+                        <div class="hero__video-container">
+                            <video class="hero__tree-video" autoplay muted loop playsinline>
+                                <source src="images/imagetree.mp4" type="video/mp4">
+                                <div class="hero__tree-logo">🌳</div>
+                            </video>
+                        </div>
+
+                        <div class="hero__left-text">
+                            <h2 class="hero__location-text">岡山から、<br>より良い未来を<br>少しずつ形にしていく。</h2>
+                        </div>
                     </div>
 
-                    <div class="hero__catchphrase">
-                        <h2 class="hero__question">What is Protopia?</h2>
-                        <p class="hero__answer">Protopia : Roots for Innovation, Well-being.</p>
-                    </div>
+                    <!-- Right side: Content -->
+                    <div class="hero__right">
+                        <h1 class="hero__title">TEDx<span class="hero__youth">Youth</span>@Okayama</h1>
+                        <div class="hero__theme-box">
+                            <p class="hero__theme">Protopia: Roots for Well-being, Innovation</p>
+                        </div>
 
-                    <h1 class="hero__title">TEDxYouth@Okayama 2025</h1>
-                    <p class="hero__theme">Roots for Well-being, Innovation</p>
+                        <div class="hero__date-section">
+                            <div class="hero__year">2025</div>
+                            <div class="hero__date">12/20</div>
+                            <div class="hero__venue-box">
+                                <p>@岡山大学<br>共育共創コモンズ</p>
+                            </div>
+                        </div>
 
-                    <div class="hero__date-info">
-                        <p class="hero__date-main">2025/12/20 sat. @Okayama Univ.</p>
-                    </div>
+                        <div class="hero__description-sections">
+                            <div class="hero__description-item">
+                                <h3>--- What is TEDx ?</h3>
+                                <p>TEDの理念に共感し、地域発のアイデアを世界に共有するためのプラットフォーム。</p>
+                            </div>
 
-                    <div class="hero__join-button" id="heroJoinButton" style="display: none;">
-                        <a href="join.html" class="btn btn--join">JOIN</a>
+                            <div class="hero__description-item">
+                                <h3>--- What is Youth ?</h3>
+                                <p>TEDxの中でも、中高生をはじめとする10代の若者が主役のTEDxはTEDx Youthとして開催できます。</p>
+                            </div>
+
+                            <div class="hero__description-item">
+                                <h3>--- What is Protopia ?</h3>
+                                <p>Protopiaとは、ユートピアでもディストピアでもなく、一歩ずつ良くしていく未来のことです。</p>
+                            </div>
+                        </div>
+
+                        <div class="hero__join-button" id="heroJoinButton" style="display: none;">
+                            <a href="join.html" class="btn btn--join">JOIN</a>
+                        </div>
                     </div>
                 </div>
 

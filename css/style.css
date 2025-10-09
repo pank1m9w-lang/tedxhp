@@ -168,41 +168,165 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero.red-background .hero__title,
 .hero.red-background .hero__theme,
-.hero.red-background .hero__question,
-.hero.red-background .hero__answer,
-.hero.red-background .hero__date-main {
+.hero.red-background .hero__location-text,
+.hero.red-background .hero__description-item h3,
+.hero.red-background .hero__description-item p,
+.hero.red-background .hero__year,
+.hero.red-background .hero__date,
+.hero.red-background .hero__venue-box p {
     color: var(--tedx-white);
 }
 
 .hero__container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
 }
 
-.hero__content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+.hero__split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Left side - Video and location text */
+.hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero__video-container {
+    margin-bottom: 2rem;
 }
 
 .hero__tree-video {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1;
     object-fit: cover;
-    margin-bottom: 2rem;
     animation: float 3s ease-in-out infinite;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 3px solid var(--tedx-red);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 .hero__tree-logo {
-    font-size: 150px;
-    margin-bottom: 2rem;
+    font-size: 200px;
     animation: float 3s ease-in-out infinite;
     display: inline-block;
+}
+
+.hero__location-text {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--tedx-black);
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Right side - Content */
+.hero__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--tedx-black);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero__youth {
+    color: var(--tedx-red);
+}
+
+.hero__theme-box {
+    background: var(--tedx-red);
+    color: var(--tedx-white);
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.hero__theme {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero__date-section {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+.hero__year {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin: 0;
+    line-height: 1;
+}
+
+.hero__date {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin: 0;
+    line-height: 1;
+}
+
+.hero__venue-box {
+    border: 3px solid var(--tedx-red);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hero__venue-box p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--tedx-black);
+}
+
+.hero__description-sections {
+    margin-bottom: 2rem;
+}
+
+.hero__description-item {
+    margin-bottom: 2rem;
+}
+
+.hero__description-item h3 {
+    color: var(--tedx-red);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    background: #333;
+    color: var(--tedx-red);
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.hero__description-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 @keyframes float {
@@ -888,13 +1012,45 @@ section {
         font-size: 2rem;
     }
 
+    .hero__split-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero__right {
+        padding-left: 0;
+        align-items: center;
+    }
+
     .hero__tree-video {
-        width: 150px;
-        height: 150px;
+        max-width: 300px;
     }
 
     .hero__tree-logo {
         font-size: 100px;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__location-text {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .hero__date-section {
+        align-self: center;
+        align-items: center;
+    }
+
+    .hero__year {
+        font-size: 2.5rem;
+    }
+
+    .hero__date {
+        font-size: 3rem;
     }
 
     .event__info,
