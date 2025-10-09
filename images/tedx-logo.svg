@@ -1,0 +1,107 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Background pattern for colorful scribbles -->
+    <pattern id="colorfulBg" patternUnits="userSpaceOnUse" width="800" height="600">
+      <!-- Colorful scribbles background -->
+      <rect width="800" height="600" fill="#ffffff"/>
+
+      <!-- Purple scribbles -->
+      <path d="M50 50 Q80 30 120 60 Q150 90 180 70 Q200 50 220 80" stroke="#B8A9DC" stroke-width="12" fill="none" opacity="0.7"/>
+      <path d="M70 150 Q100 130 140 160 Q170 190 200 170" stroke="#B8A9DC" stroke-width="15" fill="none" opacity="0.6"/>
+
+      <!-- Yellow scribbles -->
+      <path d="M250 30 Q280 10 320 40 Q350 70 380 50 Q400 30 430 60" stroke="#F4E794" stroke-width="14" fill="none" opacity="0.7"/>
+      <path d="M270 130 Q300 110 340 140 Q370 170 400 150" stroke="#F4E794" stroke-width="16" fill="none" opacity="0.6"/>
+
+      <!-- Pink scribbles -->
+      <path d="M450 50 Q480 30 520 60 Q550 90 580 70 Q600 50 630 80" stroke="#F8C8D4" stroke-width="13" fill="none" opacity="0.7"/>
+      <path d="M470 150 Q500 130 540 160 Q570 190 600 170" stroke="#F8C8D4" stroke-width="15" fill="none" opacity="0.6"/>
+
+      <!-- Blue scribbles -->
+      <path d="M50 250 Q80 230 120 260 Q150 290 180 270" stroke="#A8D8EA" stroke-width="12" fill="none" opacity="0.7"/>
+      <path d="M70 350 Q100 330 140 360 Q170 390 200 370" stroke="#A8D8EA" stroke-width="14" fill="none" opacity="0.6"/>
+
+      <!-- Green scribbles -->
+      <path d="M250 250 Q280 230 320 260 Q350 290 380 270" stroke="#C8E6C9" stroke-width="13" fill="none" opacity="0.7"/>
+      <path d="M270 350 Q300 330 340 360 Q370 390 400 370" stroke="#C8E6C9" stroke-width="15" fill="none" opacity="0.6"/>
+
+      <!-- Orange scribbles -->
+      <path d="M450 250 Q480 230 520 260 Q550 290 580 270" stroke="#FFD4A3" stroke-width="12" fill="none" opacity="0.7"/>
+      <path d="M470 350 Q500 330 540 360 Q570 390 600 370" stroke="#FFD4A3" stroke-width="14" fill="none" opacity="0.6"/>
+
+      <!-- Additional scattered scribbles -->
+      <path d="M680 80 Q710 60 750 90" stroke="#E8B4CB" stroke-width="10" fill="none" opacity="0.5"/>
+      <path d="M650 180 Q680 160 720 190" stroke="#D4EDDA" stroke-width="11" fill="none" opacity="0.5"/>
+      <path d="M680 280 Q710 260 750 290" stroke="#FFF3CD" stroke-width="9" fill="none" opacity="0.5"/>
+      <path d="M50 450 Q80 430 120 460" stroke="#F8D7DA" stroke-width="10" fill="none" opacity="0.5"/>
+      <path d="M250 450 Q280 430 320 460" stroke="#D1ECF1" stroke-width="11" fill="none" opacity="0.5"/>
+      <path d="M450 450 Q480 430 520 460" stroke="#E2E3E5" stroke-width="10" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background with colorful pattern -->
+  <rect width="800" height="600" fill="url(#colorfulBg)"/>
+
+  <!-- TEDxYouth@Okayama title -->
+  <text x="400" y="120" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#E62B1E" text-anchor="middle">TEDx Youth Okayama</text>
+
+  <!-- Tree trunk -->
+  <rect x="370" y="420" width="60" height="80" fill="#722F37" rx="10"/>
+
+  <!-- Tree main body -->
+  <ellipse cx="400" cy="360" rx="120" ry="80" fill="#722F37"/>
+
+  <!-- Tree branches -->
+  <path d="M280 340 Q320 320 360 340 Q380 350 400 340" stroke="#722F37" stroke-width="8" fill="none"/>
+  <path d="M520 340 Q480 320 440 340 Q420 350 400 340" stroke="#722F37" stroke-width="8" fill="none"/>
+  <path d="M300 380 Q340 360 380 380" stroke="#722F37" stroke-width="6" fill="none"/>
+  <path d="M500 380 Q460 360 420 380" stroke="#722F37" stroke-width="6" fill="none"/>
+  <path d="M320 300 Q350 280 380 300" stroke="#722F37" stroke-width="7" fill="none"/>
+  <path d="M480 300 Q450 280 420 300" stroke="#722F37" stroke-width="7" fill="none"/>
+
+  <!-- Green leaves/circles - various shades and sizes -->
+  <!-- Dense cluster of leaves -->
+  <circle cx="380" cy="320" r="12" fill="#4A7C59" opacity="0.8"/>
+  <circle cx="400" cy="315" r="10" fill="#5B8A6B" opacity="0.9"/>
+  <circle cx="420" cy="320" r="11" fill="#6B9B7F" opacity="0.8"/>
+  <circle cx="395" cy="340" r="13" fill="#3A6B49" opacity="0.9"/>
+  <circle cx="415" cy="340" r="9" fill="#7BAD93" opacity="0.8"/>
+  <circle cx="385" cy="345" r="10" fill="#8BC7A7" opacity="0.7"/>
+
+  <!-- More leaves spread around -->
+  <circle cx="360" cy="310" r="8" fill="#5B8A6B" opacity="0.8"/>
+  <circle cx="440" cy="310" r="9" fill="#4A7C59" opacity="0.9"/>
+  <circle cx="350" cy="335" r="11" fill="#6B9B7F" opacity="0.8"/>
+  <circle cx="450" cy="335" r="10" fill="#7BAD93" opacity="0.8"/>
+  <circle cx="340" cy="360" r="7" fill="#8BC7A7" opacity="0.7"/>
+  <circle cx="460" cy="360" r="8" fill="#5B8A6B" opacity="0.8"/>
+
+  <!-- Additional scattered leaves -->
+  <circle cx="370" cy="290" r="6" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="430" cy="290" r="7" fill="#6B9B7F" opacity="0.8"/>
+  <circle cx="325" cy="320" r="9" fill="#7BAD93" opacity="0.8"/>
+  <circle cx="475" cy="320" r="8" fill="#5B8A6B" opacity="0.8"/>
+  <circle cx="320" cy="345" r="10" fill="#8BC7A7" opacity="0.7"/>
+  <circle cx="480" cy="345" r="9" fill="#4A7C59" opacity="0.8"/>
+
+  <!-- More dense foliage -->
+  <circle cx="390" cy="300" r="8" fill="#3A6B49" opacity="0.9"/>
+  <circle cx="410" cy="300" r="9" fill="#5B8A6B" opacity="0.8"/>
+  <circle cx="375" cy="360" r="12" fill="#6B9B7F" opacity="0.8"/>
+  <circle cx="425" cy="360" r="11" fill="#7BAD93" opacity="0.8"/>
+  <circle cx="365" cy="380" r="7" fill="#8BC7A7" opacity="0.7"/>
+  <circle cx="435" cy="380" r="8" fill="#4A7C59" opacity="0.8"/>
+
+  <!-- Even more leaves for density -->
+  <circle cx="355" cy="305" r="6" fill="#5B8A6B" opacity="0.7"/>
+  <circle cx="445" cy="305" r="7" fill="#6B9B7F" opacity="0.8"/>
+  <circle cx="405" cy="285" r="5" fill="#7BAD93" opacity="0.7"/>
+  <circle cx="395" cy="385" r="10" fill="#8BC7A7" opacity="0.8"/>
+  <circle cx="405" cy="385" r="9" fill="#4A7C59" opacity="0.8"/>
+
+  <!-- Ground/soil -->
+  <rect x="0" y="500" width="800" height="100" fill="#722F37"/>
+
+  <!-- Tagline -->
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="32" font-style="italic" fill="#FFFFFF" text-anchor="middle">Roots for Well-being, Innovation</text>
+</svg>
