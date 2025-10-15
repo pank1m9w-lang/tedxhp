@@ -1532,8 +1532,14 @@ main section li {
 .program-item h3 {
     font-size: 1.8rem;
     color: var(--tedx-red);
-    text-align: center;
-    padding: 2rem;
+    text-align: left;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.program-item p {
+    text-align: left;
+    padding: 0 2rem 2rem 2rem;
+    margin: 0;
 }
 
 /* Improved button sizes */
