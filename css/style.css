@@ -88,9 +88,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__logo-img {
-    height: 60px;
-    width: auto;
+    height: 60px !important;
+    width: auto !important;
     transition: var(--transition);
+    display: block !important;
+    max-width: none !important;
 }
 
 .nav__logo-img:hover {
@@ -147,6 +149,31 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--tedx-black);
     margin: 3px 0;
     transition: var(--transition);
+}
+
+/* Force overrides for video and logo */
+video, .hero__tree-video {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+}
+
+.hero__video-container {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+img[src*="tedx-logo"], img[src*="logo-black"] {
+    height: 60px !important;
+    width: auto !important;
+    display: block !important;
 }
 
 /* Hero Section */
@@ -209,16 +236,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__tree-video {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
+    object-fit: cover !important;
     animation: float 3s ease-in-out infinite;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     outline: none !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
 }
 
 .hero__tree-logo {
