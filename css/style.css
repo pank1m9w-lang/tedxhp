@@ -202,6 +202,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero__video-container {
     margin-bottom: 2rem;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 .hero__tree-video {
@@ -211,6 +215,10 @@ h1, h2, h3, h4, h5, h6 {
     aspect-ratio: 1;
     object-fit: cover;
     animation: float 3s ease-in-out infinite;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 .hero__tree-logo {
@@ -1023,6 +1031,10 @@ section {
 
     .hero__tree-video {
         max-width: 300px;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
     }
 
     .hero__tree-logo {
