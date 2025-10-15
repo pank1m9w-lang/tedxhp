@@ -99,42 +99,16 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 
-    const navToggle = document.querySelector('.nav__toggle');
-    const navMenu = document.querySelector('.nav__menu');
+    // Bottom Navigation - Set active state
+    const bottomNavItems = document.querySelectorAll('.bottom-nav__item');
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-    console.log('NavToggle found:', navToggle);
-    console.log('NavMenu found:', navMenu);
-
-    if (navToggle && navMenu) {
-        function toggleMenu(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            console.log('Hamburger clicked/touched');
-
-            const isActive = navMenu.classList.contains('nav__menu--active');
-            console.log('Menu was active:', isActive);
-
-            navMenu.classList.toggle('nav__menu--active');
-            navToggle.classList.toggle('nav__toggle--active');
-
-            console.log('Menu is now active:', navMenu.classList.contains('nav__menu--active'));
+    bottomNavItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref === currentPath || (currentPath === '' && itemHref === 'index.html')) {
+            item.style.color = 'var(--tedx-red)';
         }
-
-        // Add both click and touch events for better mobile support
-        navToggle.addEventListener('click', toggleMenu);
-        navToggle.addEventListener('touchstart', toggleMenu);
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('nav__menu--active');
-                navToggle.classList.remove('nav__toggle--active');
-            }
-        });
-    } else {
-        console.error('NavToggle or NavMenu not found!');
-    }
+    });
 
     // Handle navigation links
     const navLinks = document.querySelectorAll('.nav__link');
@@ -158,10 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             }
-
-            // Always close mobile menu when a link is clicked
-            navMenu.classList.remove('nav__menu--active');
-            navToggle.classList.remove('nav__toggle--active');
         });
     });
 
