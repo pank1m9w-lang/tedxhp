@@ -579,8 +579,9 @@ img[src*="tedx-logo"], img[src*="logo-black"] {
 /* Page Hero for separate pages */
 .page-hero {
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--tedx-white) 100%);
-    padding: 8rem 0 4rem;
+    padding: 8rem 0 6rem;
     text-align: center;
+    margin-bottom: 4rem;
 }
 
 .page-title {
@@ -1131,4 +1132,138 @@ html {
     html {
         scroll-behavior: auto;
     }
+}
+
+/* ====== PAGE LAYOUT IMPROVEMENTS ====== */
+
+/* Improved section spacing and visual hierarchy */
+main section {
+    margin-bottom: 4rem;
+}
+
+main section:last-of-type {
+    margin-bottom: 6rem;
+}
+
+/* Enhanced content sections */
+.event-details, .join-methods, .speakers-categories, .speakers-introduction, .support-content {
+    padding: 3rem 0;
+}
+
+.event-details {
+    background: var(--tedx-white);
+}
+
+.join-methods {
+    background: var(--bg-light);
+}
+
+.speakers-categories, .speakers-introduction {
+    background: var(--tedx-white);
+}
+
+.speakers-introduction {
+    background: var(--bg-light);
+}
+
+.support-content {
+    background: var(--bg-light);
+}
+
+/* Improved card layouts */
+.event-card, .participation-option, .speaker-card, .sponsor-item, .team-role, .benefit-item {
+    background: var(--tedx-white);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.event-card:hover, .participation-option:hover, .speaker-card:hover, .team-role:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Better section headers */
+main section h2 {
+    color: var(--tedx-black);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--tedx-red);
+    display: inline-block;
+}
+
+main section h3 {
+    color: var(--tedx-black);
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem 0;
+}
+
+/* Improved paragraph spacing */
+main section p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+/* Better list styling */
+main section ul, main section ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+main section li {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+/* Enhanced grid layouts */
+.event-info-grid, .participation-grid, .speakers-grid, .team-grid, .benefits-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .event-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .participation-grid, .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Content containers with better spacing */
+.join-cta, .event-overview, .category-section, .organizers-section {
+    margin-bottom: 3rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-light);
+}
+
+/* Call-to-action improvements */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
