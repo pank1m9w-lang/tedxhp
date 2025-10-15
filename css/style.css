@@ -288,20 +288,22 @@ img[src*="tedx-logo"], img[src*="logo-black"] {
 .hero__theme-box {
     background: rgba(230, 43, 30, 0.85);
     color: var(--tedx-white);
-    padding: 0.3rem 1rem;
+    padding: 0.15rem 0.8rem;
     margin-bottom: 2rem;
-    border-radius: 2px;
+    border-radius: 1px;
     display: inline-block;
-    max-width: 75%;
-    height: auto;
-    line-height: 1.2;
+    max-width: 60%;
+    height: 25px;
+    line-height: 1;
+    overflow: hidden;
 }
 
 .hero__theme {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 400;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .hero__date-section {
