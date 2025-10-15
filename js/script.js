@@ -102,11 +102,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav__toggle');
     const navMenu = document.querySelector('.nav__menu');
 
+    console.log('NavToggle found:', navToggle);
+    console.log('NavMenu found:', navMenu);
+
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        function toggleMenu(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            console.log('Hamburger clicked/touched');
+
+            const isActive = navMenu.classList.contains('nav__menu--active');
+            console.log('Menu was active:', isActive);
+
             navMenu.classList.toggle('nav__menu--active');
             navToggle.classList.toggle('nav__toggle--active');
+
+            console.log('Menu is now active:', navMenu.classList.contains('nav__menu--active'));
+        }
+
+        // Add both click and touch events for better mobile support
+        navToggle.addEventListener('click', toggleMenu);
+        navToggle.addEventListener('touchstart', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('nav__menu--active');
+                navToggle.classList.remove('nav__toggle--active');
+            }
         });
+    } else {
+        console.error('NavToggle or NavMenu not found!');
     }
 
     // Handle navigation links
