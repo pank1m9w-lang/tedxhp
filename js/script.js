@@ -214,44 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Additional mobile menu styles for JavaScript
+// Additional styles for animations
 const style = document.createElement('style');
 style.textContent = `
-    @media (max-width: 768px) {
-        .nav__menu {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transform: translateY(-100%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .nav__menu--active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .nav__toggle--active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav__toggle--active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav__toggle--active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-    }
-
     .animate-in {
         opacity: 1;
         transform: translateY(0);
