@@ -1267,3 +1267,135 @@ main section li {
     flex-wrap: wrap;
     margin-top: 2rem;
 }
+
+/* Preparation page styles */
+.preparation-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--tedx-white) 100%);
+    text-align: center;
+}
+
+.preparation-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.preparation-title {
+    font-size: 3rem;
+    color: var(--tedx-black);
+    margin-bottom: 1rem;
+}
+
+.preparation-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.preparation-message {
+    background: var(--tedx-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.preparation-message p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.preparation-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--bg-light);
+}
+
+.preparation-info h3 {
+    color: var(--tedx-red);
+    margin-bottom: 1rem;
+}
+
+.preparation-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Contact page email styles */
+.contact-simple {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.email-contact {
+    margin: 3rem 0;
+}
+
+.email-card {
+    background: var(--tedx-white);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.email-card h3 {
+    color: var(--tedx-black);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.email-link {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: var(--tedx-red);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.email-link:hover {
+    background: var(--tedx-red);
+    color: var(--tedx-white);
+    transform: translateY(-2px);
+}
+
+.email-note {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.contact-topics {
+    margin-top: 3rem;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-topics h3 {
+    color: var(--tedx-black);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-topics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-topics li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bg-light);
+    color: var(--text-light);
+}
