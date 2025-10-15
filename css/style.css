@@ -286,8 +286,8 @@ img[src*="tedx-logo"], img[src*="logo-black"] {
 }
 
 .hero__theme-box {
-    background: rgba(230, 43, 30, 0.85);
-    color: var(--tedx-white);
+    background: rgba(230, 43, 30, 0.95);
+    color: #ffffff;
     padding: 0.15rem 0.8rem;
     margin-bottom: 2rem;
     border-radius: 1px;
@@ -304,6 +304,7 @@ img[src*="tedx-logo"], img[src*="logo-black"] {
     margin: 0;
     line-height: 1;
     white-space: nowrap;
+    color: #ffffff !important;
 }
 
 .hero__date-section {
