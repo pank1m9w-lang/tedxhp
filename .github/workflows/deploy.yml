@@ -1,17 +1,18 @@
-name: Deploy to Vercel
+name: Build and Test
 
 on:
   push:
     branches:
       - master
       - main
+      - feature/**
   pull_request:
     branches:
       - master
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,13 +28,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Type check
+        run: npx astro check
+
       - name: Build
         run: npm run build
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  # Vercel will handle deployment automatically via its GitHub integration
+  # No need for manual deployment from GitHub Actions
