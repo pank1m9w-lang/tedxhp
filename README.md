@@ -1,107 +1,163 @@
-# TEDxYouth@Okayama 2025
+# TEDx Tsushima Youth 2025
 
-Official website for TEDxYouth@Okayama 2025 - **Roots for Well-being, Innovation**
+**Protopia: Roots for Well-being, Innovation**
 
-## Event Details
+公式ウェブサイト - Astro製の高性能静的サイト
 
-- **Date**: December 20, 2025 (Saturday) 10:00-17:00
-- **Venue**: Okayama University, Kyōiku Kyōsō Commons 2F
-- **Theme**: Protopia - Continuous improvement towards a better future
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pank1m9w-lang/tedxhp)
 
-## Website Features
+## 🌟 概要
 
-- Responsive design (PC/Mobile)
-- TEDx brand compliance
-- Event information and registration
-- Speaker profiles
-- Venue access information
-- Contact and social media integration
+TEDx Tsushima Youth 2025は、2025年12月20日に岡山大学共育共創コモンズで開催される、若者主体のTEDxイベントです。
 
-## Technology Stack
+- **開催日**: 2025年12月20日
+- **会場**: 岡山大学 共育共創コモンズ
+- **テーマ**: Protopia - Roots for Well-being, Innovation
 
-- Pure HTML5, CSS3, and JavaScript
-- Google Fonts (Roboto, Noto Sans JP)
-- CSS Grid and Flexbox for layout
-- Vanilla JavaScript for interactions
-- Optimized for Vercel deployment
+## 🚀 技術スタック
 
-## Local Development
+### モダンな実装
 
-```bash
-# Clone the repository
-git clone https://github.com/pank1m9w-lang/tedxhp.git
-cd tedxhp
+- **フレームワーク**: [Astro](https://astro.build) v5.14.5
+- **言語**: TypeScript (Strict mode)
+- **スタイリング**: モダンCSS (CSS Variables, Grid, Flexbox)
+- **ビルドツール**: Vite
+- **デプロイ**: Vercel
+- **SEO**: Sitemap自動生成
 
-# Install dependencies (optional)
+### 主な特徴
+
+✨ **パフォーマンス最適化**
+- 静的サイト生成 (SSG)
+- コード分割とツリーシェイキング
+- CSS/JSの自動ミニファイ
+- 画像遅延読み込み
+
+🎨 **モダンなUI/UX**
+- レスポンシブデザイン
+- モバイルファーストアプローチ
+- スムーズなアニメーション
+- アクセシビリティ対応
+
+🔧 **開発者体験**
+- TypeScriptによる型安全性
+- コンポーネントベース設計
+- ホットモジュールリプレースメント
+- ESLint / Prettier対応
+
+## 📦 プロジェクト構造
+
+\`\`\`
+tedxhp/
+├── public/               # 静的アセット
+│   └── images/          # 画像ファイル
+├── src/
+│   ├── components/      # Astroコンポーネント
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   ├── Hero.astro
+│   │   └── BottomNav.astro
+│   ├── layouts/         # レイアウトテンプレート
+│   │   └── BaseLayout.astro
+│   ├── pages/           # ページ (ルーティング自動生成)
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── event.astro
+│   │   ├── join.astro
+│   │   ├── speakers.astro
+│   │   ├── support.astro
+│   │   ├── contact.astro
+│   │   └── preparation.astro
+│   ├── scripts/         # TypeScriptモジュール
+│   │   ├── main.ts
+│   │   ├── hero-interactions.ts
+│   │   ├── navigation.ts
+│   │   └── animations.ts
+│   └── styles/          # グローバルスタイル
+│       └── global.css
+├── astro.config.mjs     # Astro設定
+├── tsconfig.json        # TypeScript設定
+├── package.json
+└── vercel.json          # Vercelデプロイ設定
+\`\`\`
+
+## 🛠️ 開発
+
+### 必要環境
+
+- Node.js >= 18.0.0
+- npm または yarn
+
+### セットアップ
+
+\`\`\`bash
+# 依存関係のインストール
 npm install
 
-# Start local development server
+# 開発サーバー起動 (http://localhost:4321)
 npm run dev
-# or simply open index.html in your browser
-```
 
-## Deployment
+# 本番ビルド
+npm run build
 
-This site is configured for easy deployment on Vercel:
+# ビルドプレビュー
+npm run preview
+\`\`\`
 
-```bash
-# Deploy to Vercel
-npm run deploy
-```
+## 🌐 デプロイ
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+### Vercel (推奨)
 
-## Project Structure
+このプロジェクトはVercelで自動デプロイされます。
 
-```
-tedxhp/
-├── index.html          # Main HTML file
-├── css/
-│   └── style.css       # Main stylesheet
-├── js/
-│   └── script.js       # JavaScript functionality
-├── images/             # Image assets
-├── memo.txt           # Requirements specification
-├── package.json       # Project configuration
-├── vercel.json        # Vercel deployment config
-└── README.md          # This file
-```
+1. GitHubにプッシュ
+2. Vercelが自動的にビルド&デプロイ
+3. https://tedxyouth-okayama.vercel.app で公開
 
-## Design Guidelines
+## 📝 ページ一覧
 
-- **Colors**: TEDx Red (#E62B1E), Black (#000000), White (#FFFFFF)
-- **Accent**: Okayama Green (#4A7C59) for local identity
-- **Typography**: Roboto (Latin), Noto Sans JP (Japanese)
-- **Style**: Clean, modern, accessible design
+- `/` - ホーム (ヒーローセクション、インタラクティブ要素)
+- `/about` - TEDxとは、イベント概要
+- `/event` - イベント詳細、アクセス情報
+- `/join` - 参加申込、登壇者・スタッフ募集
+- `/speakers` - スピーカー紹介
+- `/support` - 運営委員会、スポンサー情報
+- `/contact` - お問い合わせ
+- `/preparation` - 準備中ページ
 
-## Content Requirements
+## 🔄 旧サイトからの移行
 
-Based on the requirements document (memo.txt), the website includes:
+### 主な改善点
 
-1. **Homepage**: Hero section with event details and CTAs
-2. **About**: TED/TEDx overview and theme explanation
-3. **Event Details**: Schedule, venue, program information
-4. **Speakers**: Profile section (currently recruitment phase)
-5. **Join Us**: Registration and access information
-6. **Team & Support**: Organizers and sponsors
-7. **Contact**: Contact form and social media links
+| 項目 | Before (旧) | After (新) |
+|------|------------|-----------|
+| フレームワーク | Vanilla HTML/CSS/JS | Astro + TypeScript |
+| ビルド | なし | Vite |
+| パフォーマンス | 〜 | ⚡ 静的生成、最適化 |
+| 開発体験 | - | コンポーネント、型安全 |
+| SEO | 手動 | Sitemap自動生成 |
+| デプロイ | 手動 | 自動 (Vercel) |
 
-## Performance
+### 移行内容
 
-- Optimized for 3-second load time
-- Responsive design for all devices
-- Accessibility compliance
-- SEO optimized
+✅ 全8ページをAstroコンポーネント化  
+✅ JavaScriptをTypeScriptモジュールに変換  
+✅ CSSをモダンな構造に再編成  
+✅ 画像最適化とアセット管理  
+✅ ビルドパイプライン構築  
+✅ CI/CD設定 (GitHub Actions)
 
-## License
+## 📄 ライセンス
 
-This project is licensed under the MIT License. TEDx events are operated under license from TED.
+MIT License
 
-## Contact
+## 🔗 リンク
 
-For questions about this website or the event, please contact the TEDxYouth@Okayama organizing committee.
+- **公式サイト**: https://tedxyouth-okayama.vercel.app
+- **TED公式**: https://www.ted.com/
+- **TEDx Program**: https://www.ted.com/about/programs-initiatives/tedx-program
 
 ---
 
-© 2025 TEDxYouth@Okayama. All rights reserved.
-This independent TEDx event is operated under license from TED.
+**&copy; 2025 TEDx Tsushima Youth**  
+*This independent TEDx event is operated under license from TED.*

@@ -1,0 +1,129 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/about', label: 'About' },
+  { href: '/event', label: 'Event' },
+  { href: '/join', label: 'Join' },
+  { href: '/speakers', label: 'Speakers' },
+  { href: '/support', label: 'Support' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="header">
+  <nav class="nav">
+    <div class="nav__container">
+      <div class="nav__logo">
+        <a href="/">
+          <img src="/images/tedx-logo-new.png" alt="TEDx Tsushima Youth" class="nav__logo-img">
+        </a>
+      </div>
+      <ul class="nav__menu">
+        {navItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['nav__link', { 'nav__link--active': currentPath === item.href }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--tedx-white);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .nav__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+
+  .nav__logo-img {
+    height: 60px !important;
+    width: auto !important;
+    transition: var(--transition);
+    display: block !important;
+    max-width: none !important;
+  }
+
+  .nav__logo-img:hover {
+    transform: scale(1.05);
+  }
+
+  .nav__menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav__link {
+    text-decoration: none;
+    color: var(--tedx-black);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .nav__link:hover {
+    color: var(--tedx-red);
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--tedx-red);
+    transition: var(--transition);
+  }
+
+  .nav__link:hover::after,
+  .nav__link--active::after {
+    width: 100%;
+  }
+
+  .nav__link--active {
+    color: var(--tedx-red) !important;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      position: relative;
+    }
+
+    .nav__container {
+      height: 60px;
+      padding: 0 15px;
+    }
+
+    .nav__logo-img {
+      height: 40px !important;
+    }
+
+    .nav__menu {
+      display: none !important;
+    }
+  }
+</style>
