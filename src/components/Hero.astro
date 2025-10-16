@@ -1,0 +1,317 @@
+---
+---
+
+<section class="hero" id="hero">
+  <div class="hero__container">
+    <div class="hero__split-layout">
+      <!-- Left side: Large video -->
+      <div class="hero__left">
+        <div class="hero__video-container">
+          <video class="hero__tree-video" autoplay muted loop playsinline>
+            <source src="/images/imagetree.mp4" type="video/mp4">
+            <div class="hero__tree-logo">🌳</div>
+          </video>
+        </div>
+
+        <div class="hero__left-text">
+          <h2 class="hero__location-text">岡山から、<br>より良い未来を<br>少しずつ形にしていく。</h2>
+        </div>
+      </div>
+
+      <!-- Right side: Content -->
+      <div class="hero__right">
+        <h1 class="hero__title">TEDx Tsushima <span class="hero__youth">Youth</span></h1>
+        <div class="hero__theme-box">
+          <p class="hero__theme">Protopia: Roots for Well-being, Innovation</p>
+        </div>
+
+        <div class="hero__date-section">
+          <div class="hero__year">2025</div>
+          <div class="hero__date">12/20</div>
+          <div class="hero__venue-box">
+            <p>@岡山大学<br>共育共創コモンズ</p>
+          </div>
+        </div>
+
+        <div class="hero__description-sections">
+          <div class="hero__description-item">
+            <h3>--- What is TEDx ?</h3>
+            <p>TEDの理念に共感し、地域発のアイデアを世界に共有するためのプラットフォーム。<br>Ideas worth Spreading.（アイデアは広める価値がある。）という考え方のもと、地域から発信していくことの重要性を強調しています。</p>
+          </div>
+
+          <div class="hero__description-item">
+            <h3>--- What is Youth ?</h3>
+            <p>TEDxの中でも、中高生をはじめとする10代の若者が主役のTEDxはTEDx Youthとして開催できます。<br>岡山の若者が、岡山の地から、発信するアイデアにきっと驚かされます。</p>
+          </div>
+
+          <div class="hero__description-item">
+            <h3>--- What is Protopia ?</h3>
+            <p>Protopiaとは、ユートピアでもディストピアでもなく、一歩ずつ良くしていく未来のことです。<br>遠い未来をデザインするのではなく、現代に視点を置き、改善を繰り返していく未来のことです。</p>
+          </div>
+        </div>
+
+        <div class="hero__join-button" id="heroJoinButton">
+          <a href="/join" class="btn btn--join">JOIN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__particles" id="heroParticles"></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    background: var(--tedx-white);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 2s ease;
+  }
+
+  .hero.red-background {
+    background: var(--tedx-red);
+    color: var(--tedx-white);
+  }
+
+  .hero.red-background .hero__title,
+  .hero.red-background .hero__theme,
+  .hero.red-background .hero__location-text,
+  .hero.red-background .hero__description-item h3,
+  .hero.red-background .hero__description-item p,
+  .hero.red-background .hero__year,
+  .hero.red-background .hero__date,
+  .hero.red-background .hero__venue-box p {
+    color: var(--tedx-white);
+  }
+
+  .hero__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .hero__split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: 80vh;
+  }
+
+  .hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero__video-container {
+    margin-bottom: 2rem;
+  }
+
+  .hero__tree-video {
+    width: 100% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
+    object-fit: cover !important;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .hero__tree-logo {
+    font-size: 200px;
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  .hero__location-text {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--tedx-black);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .hero__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--tedx-black);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .hero__youth {
+    color: var(--tedx-red);
+  }
+
+  .hero__theme-box {
+    background: rgba(230, 43, 30, 0.95);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1px;
+    display: inline-block;
+    max-width: 90%;
+    min-height: 35px;
+    line-height: 1.2;
+  }
+
+  .hero__theme {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+    word-wrap: break-word;
+    color: #ffffff !important;
+  }
+
+  .hero__date-section {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+  }
+
+  .hero__year {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .hero__date {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .hero__venue-box {
+    border: 3px solid var(--tedx-red);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .hero__venue-box p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--tedx-black);
+  }
+
+  .hero__description-sections {
+    margin-bottom: 2rem;
+  }
+
+  .hero__description-item {
+    margin-bottom: 2rem;
+  }
+
+  .hero__description-item h3 {
+    color: var(--tedx-red);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    background: #333;
+    color: var(--tedx-red);
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .hero__description-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .hero__join-button {
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    display: none;
+  }
+
+  .hero__join-button.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+  }
+
+  .hero__particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @media (max-width: 480px) {
+    .hero__split-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero__right {
+      padding-left: 0;
+      align-items: center;
+    }
+
+    .hero__tree-video {
+      max-width: 300px;
+    }
+
+    .hero__tree-logo {
+      font-size: 100px;
+    }
+
+    .hero__title {
+      font-size: 2.5rem;
+    }
+
+    .hero__location-text {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .hero__date-section {
+      align-self: center;
+      align-items: center;
+    }
+
+    .hero__year {
+      font-size: 2.5rem;
+    }
+
+    .hero__date {
+      font-size: 3rem;
+    }
+  }
+</style>

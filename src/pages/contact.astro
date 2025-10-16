@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contact - TEDx Tsushima Youth 2025">
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Contact</h1>
+        <p class="page-subtitle">お問い合わせ・ご質問はこちら</p>
+      </div>
+    </section>
+
+    <section class="contact-methods">
+      <div class="container">
+        <div class="contact-simple">
+          <h2>お問い合わせ</h2>
+          <p>TEDx Tsushima Youth 2025に関するご質問、登壇申込、協賛のご相談など、お気軽にメールでお問い合わせください。</p>
+
+          <div class="email-contact">
+            <div class="email-card">
+              <h3>📧 メールでのお問い合わせ</h3>
+              <div class="email-info">
+                <a href="mailto:sou_kumagai@s.okayama-u.ac.jp" class="email-link">
+                  sou_kumagai@s.okayama-u.ac.jp
+                </a>
+                <p class="email-note">お返事までに3-5営業日いただく場合があります。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-topics">
+            <h3>お問い合わせ内容例</h3>
+            <ul>
+              <li>🎤 登壇者・スタッフ応募について</li>
+              <li>🎫 参加申込について</li>
+              <li>🤝 協賛・後援について</li>
+              <li>📰 メディア・取材について</li>
+              <li>❓ その他のご質問</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+</BaseLayout>
