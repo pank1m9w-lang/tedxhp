@@ -1,5 +1,7 @@
 # build output
 dist/
+build/
+
 # generated types
 .astro/
 
@@ -11,14 +13,50 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
+*.log
 
 # environment variables
 .env
+.env.local
 .env.production
+.env.development.local
+.env.test.local
+.env.production.local
 
 # macOS-specific files
 .DS_Store
+Thumbs.db
 
-# jetbrains setting folder
+# Editor files
+.vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Backup files
+*.bak
+*.backup
+
+# Large media files (over 100MB)
+*.mov
+*.mp4
+*.avi
+*.mkv
+
+# Documentation and text files (temporary)
+*.txt
+memo.txt
+修正点.md
+Event.txt
+Join.txt
+home.txt
+about.txt
+contact.txt
+speakers.txt
+support.txt
