@@ -3,6 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BottomNav from '../components/BottomNav.astro';
+
+// EmailJS環境変数
+const emailJsPublicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+const emailJsServiceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+const emailJsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+const emailJsReplyTemplateId = import.meta.env.PUBLIC_EMAILJS_REPLY_TEMPLATE_ID;
 ---
 
 <BaseLayout
@@ -277,7 +283,22 @@ import BottomNav from '../components/BottomNav.astro';
   <BottomNav />
 </BaseLayout>
 
+<script define:vars={{ emailJsPublicKey, emailJsServiceId, emailJsTemplateId, emailJsReplyTemplateId }}>
+  // EmailJSの設定を環境変数から取得
+  const EMAILJS_CONFIG = {
+    publicKey: emailJsPublicKey,
+    serviceId: emailJsServiceId,
+    templateId: emailJsTemplateId,
+    replyTemplateId: emailJsReplyTemplateId
+  };
+</script>
+
 <script>
+  import emailjs from '@emailjs/browser';
+
+  // EmailJS設定を取得
+  const config = (window as any).EMAILJS_CONFIG || {};
+
   // チェックボックスと口数選択の表示切り替え
   const planCheckboxes = document.querySelectorAll('.plan-checkbox');
   planCheckboxes.forEach((checkbox) => {
@@ -306,7 +327,7 @@ import BottomNav from '../components/BottomNav.astro';
   });
 
   // フォーム送信処理
-  document.getElementById('sponsorForm')?.addEventListener('submit', function(e) {
+  document.getElementById('sponsorForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
 
     // 少なくとも1つのプランが選択されているかチェック
@@ -315,6 +336,12 @@ import BottomNav from '../components/BottomNav.astro';
       alert('少なくとも1つの支援プランを選択してください。');
       return;
     }
+
+    // 送信ボタンを無効化
+    const submitButton = (e.target as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = '送信中...';
 
     // フォームデータの収集
     const formData = new FormData(e.target as HTMLFormElement);
@@ -362,18 +389,82 @@ import BottomNav from '../components/BottomNav.astro';
 
     data.totalAmount = totalAmount;
 
-    // ここで実際の送信処理を実装
-    console.log('Form submitted:', data);
-
-    // 仮の成功メッセージ
-    alert(`スポンサー申し込みを受け付けました。\n合計金額：${totalAmount.toLocaleString()}円\n担当者より折り返しご連絡いたします。`);
-
-    // フォームをリセット
-    (e.target as HTMLFormElement).reset();
-    // 口数選択欄も非表示に
-    document.querySelectorAll('.quantity-selector').forEach(el => {
-      (el as HTMLElement).style.display = 'none';
+    // EmailJS用のパラメータを作成
+    let plansDetail = '';
+    data.plans.forEach((plan: any) => {
+      plansDetail += `${plan.name}\n`;
+      plansDetail += `  口数：${plan.quantity}口\n`;
+      plansDetail += `  金額：${plan.amount.toLocaleString()}円\n\n`;
     });
+
+    const emailParams = {
+      name: data.name,
+      contact_name: data.contactName || 'なし',
+      email: data.email,
+      phone: data.phone,
+      plans_detail: plansDetail.trim(),
+      total_amount: data.totalAmount.toLocaleString(),
+      logo: data.logo || '特になし',
+      visitor_name: data.visitorName,
+      visitor_contact: data.visitorContact,
+      afterparty_attend: data.afterpartyAttend === 'yes' ? '参加する' : '参加しない',
+      allergies: data.allergies || '特になし',
+      submission_date: new Date().toLocaleString('ja-JP')
+    };
+
+    console.log('Form data:', data);
+    console.log('Email params:', emailParams);
+
+    try {
+      // EmailJSの設定が存在するかチェック
+      if (!config.publicKey || !config.serviceId || !config.templateId) {
+        console.warn('EmailJS is not configured. Skipping email send.');
+        alert(`スポンサー申し込みを受け付けました。（開発モード）\n合計金額：${totalAmount.toLocaleString()}円\n\nEmailJS設定が必要です。.envファイルを確認してください。`);
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+        return;
+      }
+
+      // EmailJSで実行委員会宛にメール送信
+      await emailjs.send(
+        config.serviceId,
+        config.templateId,
+        emailParams,
+        config.publicKey
+      );
+
+      // 自動返信メールも送信（設定されている場合）
+      if (config.replyTemplateId) {
+        try {
+          await emailjs.send(
+            config.serviceId,
+            config.replyTemplateId,
+            emailParams,
+            config.publicKey
+          );
+        } catch (replyError) {
+          console.error('Auto-reply email failed:', replyError);
+          // 自動返信の失敗は致命的ではないので続行
+        }
+      }
+
+      // 成功メッセージ
+      alert(`スポンサー申し込みを受け付けました。\n\n合計金額：${totalAmount.toLocaleString()}円\n\n担当者より2営業日以内にご連絡いたします。\n確認メールをお送りしましたのでご確認ください。`);
+
+      // フォームをリセット
+      (e.target as HTMLFormElement).reset();
+      // 口数選択欄も非表示に
+      document.querySelectorAll('.quantity-selector').forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      alert('申し込みの送信中にエラーが発生しました。\nお手数ですが、お電話にてお問い合わせください。\n\n電話：080-6305-4024');
+    } finally {
+      // 送信ボタンを再度有効化
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
   });
 </script>
 

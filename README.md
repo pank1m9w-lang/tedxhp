@@ -94,6 +94,10 @@ tedxhp/
 # 依存関係のインストール
 npm install
 
+# 環境変数の設定
+cp .env.example .env
+# .envファイルを編集してEmailJS認証情報を追加
+
 # 開発サーバー起動 (http://localhost:4321)
 npm run dev
 
@@ -103,6 +107,27 @@ npm run build
 # ビルドプレビュー
 npm run preview
 \`\`\`
+
+### 環境変数設定
+
+スポンサー申し込みフォームにEmailJSを使用しています。以下の環境変数を設定してください：
+
+\`\`\`bash
+# .env ファイルに追加
+PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+PUBLIC_EMAILJS_TEMPLATE_ID=sponsor_application
+PUBLIC_EMAILJS_REPLY_TEMPLATE_ID=sponsor_application_reply
+\`\`\`
+
+**EmailJS設定手順**:
+1. [EmailJS](https://www.emailjs.com/)でアカウント作成
+2. Email Serviceを追加（Gmail, Outlook等）
+3. Email Templateを作成（`emailjs-sponsor-template.md`を参照）
+4. Public Key, Service ID, Template IDを取得
+5. `.env`ファイルに設定
+
+詳細は`emailjs-sponsor-template.md`を参照してください。
 
 ## 🌐 デプロイ
 
@@ -121,6 +146,7 @@ npm run preview
 - `/event` - イベント詳細、アクセス情報
 - `/join` - 参加申込、登壇者・スタッフ募集
 - `/speakers` - スピーカー紹介
+- `/sponsor` - スポンサープラン、申し込みフォーム
 - `/support` - 運営委員会、スポンサー情報
 - `/contact` - お問い合わせ
 - `/preparation` - 準備中ページ
