@@ -213,6 +213,11 @@ import BottomNav from '../components/BottomNav.astro';
                 </div>
               </div>
             </div>
+
+            <div class="total-amount-display" id="totalAmountDisplay" style="display: none;">
+              <div class="total-amount-label">合計支援金額</div>
+              <div class="total-amount-value" id="totalAmountValue">0円</div>
+            </div>
           </div>
 
           <div class="form-group">
@@ -288,6 +293,36 @@ import BottomNav from '../components/BottomNav.astro';
     replyTemplateId: import.meta.env.PUBLIC_EMAILJS_REPLY_TEMPLATE_ID
   };
 
+  // 合計金額を計算して表示する関数
+  function updateTotalAmount() {
+    const checkedPlans = document.querySelectorAll('.plan-checkbox:checked');
+    let totalAmount = 0;
+
+    checkedPlans.forEach((checkbox) => {
+      const input = checkbox as HTMLInputElement;
+      const planType = input.id.replace('plan-', '');
+      const quantityInput = document.getElementById(`quantity-${planType}-input`) as HTMLInputElement;
+      const quantity = parseInt(quantityInput.value) || 0;
+      totalAmount += quantity * 25000;
+    });
+
+    const totalAmountDisplay = document.getElementById('totalAmountDisplay');
+    const totalAmountValue = document.getElementById('totalAmountValue');
+
+    if (totalAmount > 0) {
+      if (totalAmountDisplay) {
+        totalAmountDisplay.style.display = 'block';
+      }
+      if (totalAmountValue) {
+        totalAmountValue.textContent = `${totalAmount.toLocaleString()}円`;
+      }
+    } else {
+      if (totalAmountDisplay) {
+        totalAmountDisplay.style.display = 'none';
+      }
+    }
+  }
+
   // チェックボックスと口数選択の表示切り替え
   const planCheckboxes = document.querySelectorAll('.plan-checkbox');
   planCheckboxes.forEach((checkbox) => {
@@ -312,7 +347,17 @@ import BottomNav from '../components/BottomNav.astro';
           quantityInput.required = false;
         }
       }
+
+      // 合計金額を更新
+      updateTotalAmount();
     });
+  });
+
+  // 口数入力の変更時にも合計金額を更新
+  const quantityInputs = document.querySelectorAll('.quantity-input');
+  quantityInputs.forEach((input) => {
+    input.addEventListener('input', updateTotalAmount);
+    input.addEventListener('change', updateTotalAmount);
   });
 
   // フォーム送信処理
@@ -446,6 +491,8 @@ import BottomNav from '../components/BottomNav.astro';
       document.querySelectorAll('.quantity-selector').forEach(el => {
         (el as HTMLElement).style.display = 'none';
       });
+      // 合計金額をリセット
+      updateTotalAmount();
     } catch (error) {
       console.error('EmailJS Error:', error);
       alert('申し込みの送信中にエラーが発生しました。\nお手数ですが、お電話にてお問い合わせください。\n\n電話：080-6305-4024');
@@ -808,6 +855,29 @@ import BottomNav from '../components/BottomNav.astro';
   .quantity-note {
     font-size: 0.85rem;
     color: #666;
+  }
+
+  /* 合計金額表示 */
+  .total-amount-display {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    border: 2px solid var(--tedx-red);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .total-amount-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--tedx-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .total-amount-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tedx-red);
   }
 
   .form-section {
