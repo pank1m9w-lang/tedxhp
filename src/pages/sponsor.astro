@@ -65,24 +65,21 @@ import BottomNav from '../components/BottomNav.astro';
             <div class="plan-icon">🎨</div>
             <h3 class="plan-title">会場装飾・ワークショップ費用支援</h3>
             <p class="plan-description">高校生がワクワクする空間を演出するための装飾・演出費用</p>
-            <p class="plan-price">25,000円</p>
-            <p class="plan-note">1口</p>
+            <p class="plan-price">25,000円/口</p>
           </div>
 
           <div class="plan-card">
             <div class="plan-icon">🍽</div>
             <h3 class="plan-title">Speaker向けアフターパーティー支援</h3>
             <p class="plan-description">登壇者のアフターパーティー飲食費</p>
-            <p class="plan-price">25,000円</p>
-            <p class="plan-note">最大2口まで</p>
+            <p class="plan-price">25,000円/口</p>
           </div>
 
           <div class="plan-card">
             <div class="plan-icon">💧</div>
             <h3 class="plan-title">Speaker / Audience向け飲料支援</h3>
             <p class="plan-description">約200本の水やお茶などの購入費用</p>
-            <p class="plan-price">25,000円</p>
-            <p class="plan-note">最大2口まで</p>
+            <p class="plan-price">25,000円/口</p>
           </div>
         </div>
       </div>
@@ -174,7 +171,7 @@ import BottomNav from '../components/BottomNav.astro';
 
           <div class="form-group">
             <label>支援プランの選択 <span class="required">*</span></label>
-            <p class="form-help">複数のプランを選択できます。それぞれの口数を選択してください。</p>
+            <p class="form-help">複数のプランを選択できます。それぞれの口数を選択してください。<br>※必要分の応募があり次第、締め切らせていただきます。</p>
 
             <div class="plan-selection">
               <div class="plan-option">
@@ -184,8 +181,7 @@ import BottomNav from '../components/BottomNav.astro';
                 </label>
                 <div class="quantity-selector" id="quantity-decoration" style="display: none;">
                   <label for="quantity-decoration-input">口数：</label>
-                  <input type="number" id="quantity-decoration-input" name="quantity-decoration" min="1" max="1" value="1" class="quantity-input">
-                  <span class="quantity-note">最大1口</span>
+                  <input type="number" id="quantity-decoration-input" name="quantity-decoration" min="1" value="1" class="quantity-input">
                 </div>
               </div>
 
@@ -196,8 +192,7 @@ import BottomNav from '../components/BottomNav.astro';
                 </label>
                 <div class="quantity-selector" id="quantity-afterparty" style="display: none;">
                   <label for="quantity-afterparty-input">口数：</label>
-                  <input type="number" id="quantity-afterparty-input" name="quantity-afterparty" min="1" max="2" value="1" class="quantity-input">
-                  <span class="quantity-note">最大2口</span>
+                  <input type="number" id="quantity-afterparty-input" name="quantity-afterparty" min="1" value="1" class="quantity-input">
                 </div>
               </div>
 
@@ -208,8 +203,7 @@ import BottomNav from '../components/BottomNav.astro';
                 </label>
                 <div class="quantity-selector" id="quantity-beverage" style="display: none;">
                   <label for="quantity-beverage-input">口数：</label>
-                  <input type="number" id="quantity-beverage-input" name="quantity-beverage" min="1" max="2" value="1" class="quantity-input">
-                  <span class="quantity-note">最大2口</span>
+                  <input type="number" id="quantity-beverage-input" name="quantity-beverage" min="1" value="1" class="quantity-input">
                 </div>
               </div>
             </div>
@@ -666,12 +660,6 @@ import BottomNav from '../components/BottomNav.astro';
     font-size: 2rem;
     font-weight: 700;
     color: var(--tedx-red);
-    margin-bottom: 0.5rem;
-  }
-
-  .plan-note {
-    font-size: 0.9rem;
-    color: #999;
   }
 
   /* スポンサー特典 */
