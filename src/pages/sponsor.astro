@@ -173,18 +173,46 @@ import BottomNav from '../components/BottomNav.astro';
           </div>
 
           <div class="form-group">
-            <label for="plan">支援プランの選択 <span class="required">*</span></label>
-            <select id="plan" name="plan" required>
-              <option value="">選択してください</option>
-              <option value="decoration">🎨 会場装飾・ワークショップ費用支援</option>
-              <option value="afterparty">🍽 Speaker向けアフターパーティー支援</option>
-              <option value="beverage">💧 Speaker / Audience向け飲料支援</option>
-            </select>
-          </div>
+            <label>支援プランの選択 <span class="required">*</span></label>
+            <p class="form-help">複数のプランを選択できます。それぞれの口数を選択してください。</p>
 
-          <div class="form-group">
-            <label for="quantity">口数の選択 <span class="required">*</span></label>
-            <input type="number" id="quantity" name="quantity" min="1" max="2" value="1" required>
+            <div class="plan-selection">
+              <div class="plan-option">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="plan-decoration" id="plan-decoration" class="plan-checkbox">
+                  <span>🎨 会場装飾・ワークショップ費用支援（25,000円/口）</span>
+                </label>
+                <div class="quantity-selector" id="quantity-decoration" style="display: none;">
+                  <label for="quantity-decoration-input">口数：</label>
+                  <input type="number" id="quantity-decoration-input" name="quantity-decoration" min="1" max="1" value="1" class="quantity-input">
+                  <span class="quantity-note">最大1口</span>
+                </div>
+              </div>
+
+              <div class="plan-option">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="plan-afterparty" id="plan-afterparty" class="plan-checkbox">
+                  <span>🍽 Speaker向けアフターパーティー支援（25,000円/口）</span>
+                </label>
+                <div class="quantity-selector" id="quantity-afterparty" style="display: none;">
+                  <label for="quantity-afterparty-input">口数：</label>
+                  <input type="number" id="quantity-afterparty-input" name="quantity-afterparty" min="1" max="2" value="1" class="quantity-input">
+                  <span class="quantity-note">最大2口</span>
+                </div>
+              </div>
+
+              <div class="plan-option">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="plan-beverage" id="plan-beverage" class="plan-checkbox">
+                  <span>💧 Speaker / Audience向け飲料支援（25,000円/口）</span>
+                </label>
+                <div class="quantity-selector" id="quantity-beverage" style="display: none;">
+                  <label for="quantity-beverage-input">口数：</label>
+                  <input type="number" id="quantity-beverage-input" name="quantity-beverage" min="1" max="2" value="1" class="quantity-input">
+                  <span class="quantity-note">最大2口</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="form-group">
@@ -250,21 +278,102 @@ import BottomNav from '../components/BottomNav.astro';
 </BaseLayout>
 
 <script>
+  // チェックボックスと口数選択の表示切り替え
+  const planCheckboxes = document.querySelectorAll('.plan-checkbox');
+  planCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', function(e) {
+      const target = e.target as HTMLInputElement;
+      const planType = target.id.replace('plan-', '');
+      const quantitySelector = document.getElementById(`quantity-${planType}`);
+      const quantityInput = document.getElementById(`quantity-${planType}-input`) as HTMLInputElement;
+
+      if (target.checked) {
+        if (quantitySelector) {
+          quantitySelector.style.display = 'flex';
+        }
+        if (quantityInput) {
+          quantityInput.required = true;
+        }
+      } else {
+        if (quantitySelector) {
+          quantitySelector.style.display = 'none';
+        }
+        if (quantityInput) {
+          quantityInput.required = false;
+        }
+      }
+    });
+  });
+
+  // フォーム送信処理
   document.getElementById('sponsorForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // 少なくとも1つのプランが選択されているかチェック
+    const checkedPlans = document.querySelectorAll('.plan-checkbox:checked');
+    if (checkedPlans.length === 0) {
+      alert('少なくとも1つの支援プランを選択してください。');
+      return;
+    }
+
     // フォームデータの収集
     const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData.entries());
+    const data: any = {};
+
+    // 基本情報
+    data.name = formData.get('name');
+    data.contactName = formData.get('contact-name');
+    data.email = formData.get('email');
+    data.phone = formData.get('phone');
+    data.logo = formData.get('logo');
+
+    // 来場者情報
+    data.visitorName = formData.get('visitor-name');
+    data.visitorContact = formData.get('visitor-contact');
+    data.afterpartyAttend = formData.get('afterparty-attend');
+    data.allergies = formData.get('allergies');
+
+    // 選択されたプランと口数
+    data.plans = [];
+    let totalAmount = 0;
+
+    checkedPlans.forEach((checkbox) => {
+      const input = checkbox as HTMLInputElement;
+      const planType = input.id.replace('plan-', '');
+      const quantityInput = document.getElementById(`quantity-${planType}-input`) as HTMLInputElement;
+      const quantity = parseInt(quantityInput.value);
+      const amount = quantity * 25000;
+
+      const planNames: {[key: string]: string} = {
+        'decoration': '🎨 会場装飾・ワークショップ費用支援',
+        'afterparty': '🍽 Speaker向けアフターパーティー支援',
+        'beverage': '💧 Speaker / Audience向け飲料支援'
+      };
+
+      data.plans.push({
+        type: planType,
+        name: planNames[planType],
+        quantity: quantity,
+        amount: amount
+      });
+
+      totalAmount += amount;
+    });
+
+    data.totalAmount = totalAmount;
 
     // ここで実際の送信処理を実装
     console.log('Form submitted:', data);
 
     // 仮の成功メッセージ
-    alert('スポンサー申し込みを受け付けました。担当者より折り返しご連絡いたします。');
+    alert(`スポンサー申し込みを受け付けました。\n合計金額：${totalAmount.toLocaleString()}円\n担当者より折り返しご連絡いたします。`);
 
     // フォームをリセット
     (e.target as HTMLFormElement).reset();
+    // 口数選択欄も非表示に
+    document.querySelectorAll('.quantity-selector').forEach(el => {
+      (el as HTMLElement).style.display = 'none';
+    });
   });
 </script>
 
@@ -535,6 +644,12 @@ import BottomNav from '../components/BottomNav.astro';
     color: var(--tedx-red);
   }
 
+  .form-help {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -551,6 +666,68 @@ import BottomNav from '../components/BottomNav.astro';
   .form-group textarea:focus {
     outline: none;
     border-color: var(--tedx-red);
+  }
+
+  /* プラン選択 */
+  .plan-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .plan-option {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .plan-option:has(.plan-checkbox:checked) {
+    border-color: var(--tedx-red);
+    background: #fff5f5;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .checkbox-label span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-left: 2rem;
+  }
+
+  .quantity-selector label {
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+
+  .quantity-input {
+    width: 80px !important;
+    padding: 8px !important;
+  }
+
+  .quantity-note {
+    font-size: 0.85rem;
+    color: #666;
   }
 
   .form-section {
