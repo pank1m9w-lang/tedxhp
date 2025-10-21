@@ -1,0 +1,650 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BottomNav from '../components/BottomNav.astro';
+---
+
+<BaseLayout
+  title="TEDx Tsushima Youth 2025 - スポンサープラン"
+  description="TEDx Tsushima Youth 2025のスポンサープランのご案内。地域の高校生・若者のアイデアを一緒に支援しませんか。"
+>
+  <Header />
+
+  <main class="sponsor-page">
+    <!-- ヒーローセクション -->
+    <section class="sponsor-hero">
+      <div class="container">
+        <h1 class="hero-title">SPONSORSHIP PLAN</h1>
+        <p class="hero-subtitle">スポンサープランのご案内</p>
+        <p class="hero-theme">Roots for Well-being, Innovation</p>
+        <p class="hero-description">
+          TEDx Tsushima Youthは完全に非営利で開催され、運営・登壇者サポートはすべてボランティアによって支えられています。<br>
+          そのため、イベントの運営費・装飾・高校生スピーカー支援・アフターパーティーなど、皆さまからのご支援によって成り立っています。
+        </p>
+        <a href="#apply" class="cta-button">支援申し込みはこちら</a>
+      </div>
+    </section>
+
+    <!-- TEDxネットワーク紹介 -->
+    <section class="section tedx-about">
+      <div class="container">
+        <h2 class="section-title">TEDxというネットワークについて</h2>
+        <p class="section-description">
+          TEDxは「Ideas Worth Spreading（広める価値のあるアイデア）」を共有するための世界的なネットワークです。<br>
+          TEDx Tsushima Youthは、その理念のもと、地域の高校生や若者が自らのアイデアを発信する舞台を創ります。
+        </p>
+        <div class="canva-link">
+          <a href="https://www.canva.com/design/DAGzreszYSA/5ha1spfaUzHONaJNiZfmRQ/view?utm_content=DAGzreszYSA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc5848e9154" target="_blank" class="canva-button">
+            詳細資料を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- スポンサーの意義 -->
+    <section class="section sponsor-purpose">
+      <div class="container">
+        <h2 class="section-title">なぜスポンサーが必要なのか</h2>
+        <p class="section-description">
+          TEDx Tsushima Youth では、完全非営利で運営されており、スタッフ・登壇者の活動もボランティアです。<br>
+          そのため、装飾や参加者用グッズ、アフターパーティーなどを支援してくださるスポンサーの存在が欠かせません。<br>
+          <strong>スポンサーシップは「支援」だけでなく、「ともにTEDxを創る」パートナーシップです。</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- スポンサープラン一覧 -->
+    <section class="section sponsor-plans" id="plans">
+      <div class="container">
+        <h2 class="section-title">SPONSOR PLAN</h2>
+        <p class="section-subtitle">ご協賛プラン</p>
+
+        <div class="plans-grid">
+          <div class="plan-card">
+            <div class="plan-icon">🎨</div>
+            <h3 class="plan-title">会場装飾・ワークショップ費用支援</h3>
+            <p class="plan-description">高校生がワクワクする空間を演出するための装飾・演出費用</p>
+            <p class="plan-price">25,000円</p>
+            <p class="plan-note">1口</p>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-icon">🍽</div>
+            <h3 class="plan-title">Speaker向けアフターパーティー支援</h3>
+            <p class="plan-description">登壇者のアフターパーティー飲食費</p>
+            <p class="plan-price">25,000円</p>
+            <p class="plan-note">最大2口まで</p>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-icon">💧</div>
+            <h3 class="plan-title">Speaker / Audience向け飲料支援</h3>
+            <p class="plan-description">約200本の水やお茶などの購入費用</p>
+            <p class="plan-price">25,000円</p>
+            <p class="plan-note">最大2口まで</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- スポンサー特典 -->
+    <section class="section sponsor-benefits">
+      <div class="container">
+        <h2 class="section-title">SPONSOR BENEFITS</h2>
+        <p class="section-subtitle">スポンサー特典</p>
+
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-number">01</div>
+            <p>2名までトーク・ワークショップに無料招待</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">02</div>
+            <p>アフターパーティーに1名あたり2,000円で参加可能</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">03</div>
+            <p>各種SNS・公式HP・会場内で企業ロゴ等をPR</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">04</div>
+            <p>岡山オリジナルの空間演出・装飾に貢献可能</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audienceチケット案内 -->
+    <section class="section audience-ticket">
+      <div class="container">
+        <h2 class="section-title">AUDIENCE TICKET</h2>
+        <p class="section-subtitle">参加チケット</p>
+
+        <div class="ticket-info">
+          <div class="ticket-item">
+            <p class="ticket-label">talk＋ワークショップ参加</p>
+            <p class="ticket-value">1,000円</p>
+          </div>
+          <div class="ticket-item">
+            <p class="ticket-label">アフターパーティー参加</p>
+            <p class="ticket-value">5,000円<span class="ticket-note">（高校生以下無料）</span></p>
+          </div>
+          <div class="ticket-item">
+            <p class="ticket-label">支払方法</p>
+            <p class="ticket-value">当日会場支払い（お釣りのないようご協力ください）</p>
+          </div>
+          <div class="ticket-item">
+            <p class="ticket-label">申し込み締切</p>
+            <p class="ticket-value">12月12日まで</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 申し込みフォーム -->
+    <section class="section sponsor-apply" id="apply">
+      <div class="container">
+        <h2 class="section-title">APPLY FOR SPONSOR</h2>
+        <p class="section-subtitle">ご支援のお申し込み</p>
+        <p class="apply-deadline">申込期限：2025年11月20日まで</p>
+
+        <form class="sponsor-form" id="sponsorForm">
+          <div class="form-group">
+            <label for="name">氏名または法人名 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-name">法人の場合：ご担当者名</label>
+            <input type="text" id="contact-name" name="contact-name">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">電話番号 <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="plan">支援プランの選択 <span class="required">*</span></label>
+            <select id="plan" name="plan" required>
+              <option value="">選択してください</option>
+              <option value="decoration">🎨 会場装飾・ワークショップ費用支援</option>
+              <option value="afterparty">🍽 Speaker向けアフターパーティー支援</option>
+              <option value="beverage">💧 Speaker / Audience向け飲料支援</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">口数の選択 <span class="required">*</span></label>
+            <input type="number" id="quantity" name="quantity" min="1" max="2" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="logo">PR用ロゴや素材の提出</label>
+            <textarea id="logo" name="logo" rows="2" placeholder="ロゴデータの送付方法や、掲載希望の情報をご記入ください"></textarea>
+          </div>
+
+          <div class="form-section">
+            <h3 class="form-section-title">当日来場者情報</h3>
+
+            <div class="form-group">
+              <label for="visitor-name">氏名 <span class="required">*</span></label>
+              <input type="text" id="visitor-name" name="visitor-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="visitor-contact">連絡先 <span class="required">*</span></label>
+              <input type="text" id="visitor-contact" name="visitor-contact" required>
+            </div>
+
+            <div class="form-group">
+              <label>アフターパーティー参加有無 <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="afterparty-attend" value="yes" required>
+                  参加する
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="afterparty-attend" value="no" required>
+                  参加しない
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="allergies">食物アレルギー等の特記事項</label>
+              <textarea id="allergies" name="allergies" rows="3" placeholder="アレルギーや食事制限などがあればご記入ください"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">スポンサー申込を送信</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section class="section sponsor-contact">
+      <div class="container">
+        <h2 class="section-title">CONTACT</h2>
+        <p class="section-subtitle">お問い合わせ</p>
+
+        <div class="contact-info">
+          <p><strong>問い合わせ先：</strong>TEDx Tsushima Youth 実行委員会（岡山大学DS部）</p>
+          <p><strong>電話：</strong><a href="tel:080-6305-4024">080-6305-4024</a></p>
+          <p><strong>公式サイト：</strong><a href="https://tedxhp.vercel.app/" target="_blank">https://tedxhp.vercel.app/</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+</BaseLayout>
+
+<script>
+  document.getElementById('sponsorForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // フォームデータの収集
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+
+    // ここで実際の送信処理を実装
+    console.log('Form submitted:', data);
+
+    // 仮の成功メッセージ
+    alert('スポンサー申し込みを受け付けました。担当者より折り返しご連絡いたします。');
+
+    // フォームをリセット
+    (e.target as HTMLFormElement).reset();
+  });
+</script>
+
+<style>
+  .sponsor-page {
+    margin-top: 70px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ヒーローセクション */
+  .sponsor-hero {
+    background: linear-gradient(135deg, var(--tedx-red) 0%, #c41e1a 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-theme {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--tedx-red);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  /* セクション共通スタイル */
+  .section {
+    padding: 80px 20px;
+  }
+
+  .section:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--tedx-black);
+  }
+
+  .section-subtitle {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--tedx-red);
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Canvaリンク */
+  .canva-link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .canva-button {
+    display: inline-block;
+    background: var(--tedx-red);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .canva-button:hover {
+    background: #c41e1a;
+    transform: translateY(-2px);
+  }
+
+  /* スポンサープラン */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .plan-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .plan-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .plan-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--tedx-black);
+  }
+
+  .plan-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #666;
+  }
+
+  .plan-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-note {
+    font-size: 0.9rem;
+    color: #999;
+  }
+
+  /* スポンサー特典 */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .benefit-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .benefit-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tedx-red);
+    margin-bottom: 1rem;
+  }
+
+  .benefit-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* チケット情報 */
+  .ticket-info {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+
+  .ticket-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .ticket-item:last-child {
+    border-bottom: none;
+  }
+
+  .ticket-label {
+    font-weight: 600;
+  }
+
+  .ticket-value {
+    text-align: right;
+  }
+
+  .ticket-note {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* 申し込みフォーム */
+  .apply-deadline {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--tedx-red);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .sponsor-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--tedx-black);
+  }
+
+  .required {
+    color: var(--tedx-red);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--tedx-red);
+  }
+
+  .form-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #eee;
+  }
+
+  .form-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--tedx-black);
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: var(--tedx-red);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .submit-button:hover {
+    background: #c41e1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  /* お問い合わせ */
+  .contact-info {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+
+  .contact-info a {
+    color: var(--tedx-red);
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 768px) {
+    .sponsor-page {
+      margin-top: 60px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .plans-grid,
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>
