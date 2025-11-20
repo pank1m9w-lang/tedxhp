@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://tedxyouth-okayama.vercel.app',
   integrations: [sitemap()],
-  output: 'hybrid',
+  output: 'server',
   build: {
     inlineStylesheets: 'auto',
     assets: '_assets',
