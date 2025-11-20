@@ -1,13 +1,11 @@
-import type { APIRoute } from 'astro';
-import { neon } from '@neondatabase/serverless';
+import { NextResponse } from 'next/server'
+import { neon } from '@neondatabase/serverless'
 
-export const prerender = false;
-
-export const POST: APIRoute = async ({ request }) => {
+export async function POST(request: Request) {
   try {
-    const data = await request.json();
+    const data = await request.json()
 
-    const sql = neon(import.meta.env.DATABASE_URL);
+    const sql = neon(process.env.DATABASE_URL!)
 
     // Create table if not exists
     await sql`
@@ -22,7 +20,7 @@ export const POST: APIRoute = async ({ request }) => {
         party_count INTEGER,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
-    `;
+    `
 
     // Insert registration
     await sql`
@@ -37,17 +35,11 @@ export const POST: APIRoute = async ({ request }) => {
         ${data.after_party},
         ${data.party_count || 0}
       )
-    `;
+    `
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Database error:', error);
-    return new Response(JSON.stringify({ success: false, error: 'Database error' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    console.error('Database error:', error)
+    return NextResponse.json({ success: false, error: 'Database error' }, { status: 500 })
   }
-};
+}

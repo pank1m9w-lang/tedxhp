@@ -1,31 +1,40 @@
-# build output
-dist/
-build/
-
-# generated types
-.astro/
-
 # dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# logs
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-*.log
+.pnpm-debug.log*
 
-# environment variables
+# local env files
 .env
-.env.local
-.env.production
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
-# macOS-specific files
-.DS_Store
-Thumbs.db
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
 # Editor files
 .vscode/
@@ -42,21 +51,3 @@ Thumbs.db
 # Backup files
 *.bak
 *.backup
-
-# Large media files (over 100MB)
-*.mov
-*.mp4
-*.avi
-*.mkv
-
-# Documentation and text files (temporary)
-*.txt
-memo.txt
-修正点.md
-Event.txt
-Join.txt
-home.txt
-about.txt
-contact.txt
-speakers.txt
-support.txt

@@ -43,21 +43,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.3rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.3rem; }
 
 p {
   font-size: 1.1rem;
@@ -99,24 +88,9 @@ p {
   color: var(--tedx-white);
 }
 
-.btn--join {
-  background: var(--tedx-white);
-  color: var(--tedx-red);
-  border-color: var(--tedx-white);
-  font-size: 1.5rem;
+.btn--large {
   padding: 15px 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn--join:hover {
-  background: transparent;
-  color: var(--tedx-white);
-  border-color: var(--tedx-white);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
 }
 
 /* Page Hero */
@@ -182,78 +156,6 @@ section {
   font-size: 2rem;
 }
 
-.content-text h3 {
-  color: var(--tedx-black);
-  margin: 2rem 0 1rem 0;
-  font-size: 1.3rem;
-}
-
-.content-text p {
-  color: var(--text-light);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-/* Particle animations */
-.particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: rgba(230, 43, 30, 0.8);
-  border-radius: 50% 0 50% 0;
-  animation: fall 4s linear infinite;
-  transform-origin: center;
-}
-
-.particle::before {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 182, 193, 0.6);
-  border-radius: 50% 0 50% 0;
-  top: 2px;
-  left: 2px;
-}
-
-.particle.petal-1 {
-  background: rgba(255, 182, 193, 0.8);
-  border-radius: 50% 20% 50% 20%;
-}
-
-.particle.petal-2 {
-  background: rgba(230, 43, 30, 0.7);
-  border-radius: 20% 50% 20% 50%;
-}
-
-.particle.petal-3 {
-  background: rgba(255, 105, 180, 0.8);
-  border-radius: 60% 10% 60% 10%;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-.ripple {
-  position: absolute;
-  border: 2px solid var(--tedx-red);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
-  pointer-events: none;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
 /* Responsive padding for mobile bottom nav */
 @media (max-width: 768px) {
   main {
@@ -262,6 +164,18 @@ section {
 
   body {
     padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .page-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
   }
 }
 
