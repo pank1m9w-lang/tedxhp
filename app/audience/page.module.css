@@ -110,12 +110,30 @@
 .radioOption {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   cursor: pointer;
+  padding: 1rem 1.25rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.radioOption:hover {
+  border-color: #e62b1e;
+  background: #fef2f2;
+}
+
+.radioOption:has(input:checked) {
+  border-color: #e62b1e;
+  background: #fef2f2;
+  box-shadow: 0 0 0 1px #e62b1e;
 }
 
 .radioOption input {
-  width: auto;
+  width: 20px;
+  height: 20px;
+  accent-color: #e62b1e;
 }
 
 .partyInfo {
