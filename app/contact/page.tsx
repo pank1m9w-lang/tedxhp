@@ -17,7 +17,7 @@ export default function ContactPage() {
                 sou_kumagai@s.okayama-u.ac.jp
               </a>
             </p>
-            <p style={{ color: '#666' }}>お返事までに3-5営業日いただく場合があります。</p>
+            <p style={{ color: '#666' }}>ご返信まで3〜5営業日ほどお時間をいただく場合がございます。</p>
           </div>
 
           <div className="content-section">
