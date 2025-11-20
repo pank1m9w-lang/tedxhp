@@ -1,7 +1,7 @@
 {
   "name": "tedxyouth-okayama-2025",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Official website for TEDxYouth@Okayama 2025 - Roots for Well-being, Innovation (Astro)",
   "scripts": {
     "dev": "astro dev",
